@@ -1,0 +1,80 @@
+* {
+  box-sizing: border-box;
+}
+body, html {
+  margin: 0;
+  padding: 0;
+}
+header {
+  height: 15vh;
+  width: 100vw;
+  margin: auto;
+  border: 0 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: lightblue;
+  font-size: 30px;
+}
+header h1 {
+  border-left: 10px solid darkblue;
+  padding-left: 10px;
+}
+header h1 span {
+  color: darkblue;
+  text-transform: lowercase;
+  font-family: Verdana;
+  
+}
+.container {
+  /*margin-top: 5px;*/
+  height: 800px;
+  background-color: #07575B;
+  display: grid;
+  /*margin: 0 15px;*/
+  /* rows height */
+  grid-template-rows: 50px 1fr 50px;
+  grid-template-columns: 20% 1fr 20%;
+  /* grid gutter*/
+  grid-gap: 5px;
+  grid-template-areas: 
+  "apple apple apple"
+  "facebook microsoft samsung"
+  "google google google";
+}
+#apple {
+  grid-area: apple;
+}
+#facebook {
+  grid-area: facebook;
+}
+#microsoft {
+  grid-area: microsoft;
+}
+#google {
+  grid-area: google;
+}
+#samsung {
+  grid-area: samsung;
+}
+.container > div {
+  background-color: #66a5AD;
+  color: aliceblue;
+  text-align: center;
+  /*margin: 2px;*/
+  padding: 5px;
+  font-size: 20px;
+}
+
+@media all and (max-width: 700px){
+ .container{
+   grid-template-areas: 
+   "facebook"
+   "apple"
+   "microsoft"
+   "samsung"
+   "google";
+   grid-template-rows: 50px 100px 1fr 100px 50px;
+   grid-template-columns: 1fr;
+ }
+}
